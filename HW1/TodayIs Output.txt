@@ -1,0 +1,6 @@
+Author: Brandon Edwards
+Date: 09/22/17
+File: TodayIs Output.java
+Honor Code: I pledge that this submission is solely my work, and that I have neither given to nor received help from anyone other than the instructor or TAs.
+
+----jGRASP exec: java todayIs the month is October October is month number 10 The day of the month is: 22   ----jGRASP: operation complete. 
