@@ -5,6 +5,32 @@
 //and that I have neither given to nor received help from anyone
 //other than the instructor or TAs.
 
+/*Pseudocode
+import scanner
+declare class and main method
+declare variables 
+day(int) month(string) year(int) daysLeft(int)
+initialize scanner
+ask for day(int)
+assign input
+rinse repeat for month(string) and year(int)
+make if statement to check for leap year
+1 y%4 = 0 :2: else :5:
+2 y%100 = 0 :3: else :4:
+3 y%400 = 0 :4: else :5:
+4 its leap
+5 its not leap
+make month lowercase
+switch statement to find month number of days in year
+31 28/29 31 30 31 30 31 31 30 31 30 31 = 365/366
+daysLeft - days
+print days left.
+*/
+/*Errors
+An Input Mismatch error can occur when the input for days or year is not an int. Ex. 3.14
+Another Input Mismatch error can occur when the input for days or years
+is an number that is too large for the int data type. Ex. 99999999999999999999999999999999999999999999 
+*/
 import java.util.Scanner;
 
 //A simple java program to take the day month and year
@@ -18,9 +44,9 @@ public class NumDaysLeftInYear{
       //declaring 3 ints for dates, a string for the month,
       //and a boolean for the leap year value
       Scanner keyboard = new Scanner(System.in);
-      int day, year, daysLeft = 0;
+      int dayOfMonth, year, daysLeftInYear = 0;
       String month;
-      boolean leapYear = false;
+      boolean leapYear = true;
       
       //performing 3 print statements with their accompanied scanner assignments
       //to get user input from the keyboard
@@ -28,7 +54,7 @@ public class NumDaysLeftInYear{
       month = keyboard.nextLine();
       
       System.out.println("What day of the month is it?");
-      day = keyboard.nextInt();
+      dayOfMonth = keyboard.nextInt();
       
       System.out.println("Finally what is the year?");
       year = keyboard.nextInt();
@@ -49,54 +75,54 @@ public class NumDaysLeftInYear{
       //to the daysLeft variable
       switch (month.toLowerCase()){
          case "december":
-            daysLeft = 31;
+            daysLeftInYear = 31;
             break;
          case "novemeber":
-            daysLeft = 61;
+            daysLeftInYear = 61;
             break;
          case "october":
-            daysLeft = 92;
+            daysLeftInYear = 92;
             break;
          case "september":
-            daysLeft = 122;
+            daysLeftInYear = 122;
             break;
          case "august":
-            daysLeft = 153;
+            daysLeftInYear = 153;
             break;
          case "july":
-            daysLeft = 184;
+            daysLeftInYear = 184;
             break;
          case "june":
-            daysLeft = 214;
+            daysLeftInYear = 214;
             break;
          case "may":
-            daysLeft = 245;
+            daysLeftInYear = 245;
             break;
          case "april":
-            daysLeft = 275;
+            daysLeftInYear = 275;
             break;
          case "march":
-            daysLeft = 306;
+            daysLeftInYear = 306;
             break;
          case "february":
             if (leapYear)
-               daysLeft = 335;
+               daysLeftInYear = 335;
             else
-               daysLeft = 334;
+               daysLeftInYear = 334;
             break;
          case "january":
             if(leapYear)
-               daysLeft = 366;
+               daysLeftInYear = 366;
             else
-               daysLeft = 365;
+               daysLeftInYear = 365;
             break;
-            default:
-            System.out.println("Thats not a month, try again");
+         default:
+            System.out.println(month + " is not a month, try again");
       }
       
       //Math to subract the day of the month from the daysLeft variable
       //and print out the reassigned variable to the screen
-      daysLeft = daysLeft - day;
-      System.out.println("The number of days left in the year is " + daysLeft);
+      daysLeftInYear = daysLeftInYear - dayOfMonth;
+      System.out.println("The number of days left in the year is " + daysLeftInYear);
    }
 }
