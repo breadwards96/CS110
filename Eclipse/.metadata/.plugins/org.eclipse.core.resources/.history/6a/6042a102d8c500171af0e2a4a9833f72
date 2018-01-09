@@ -1,0 +1,52 @@
+import java.util.Random;
+
+public class Gambler {
+
+	private String gamblerName = null;
+	private double winningPercentage = 0.0;
+	private double dollarsSpent = 0.0;
+	private double dollarsWon = 100.0;
+	
+	Random winner = new Random();
+	
+	public double getWinningPecentage(){
+		return winningPercentage;
+	}
+	
+	public void setWinningPercentage(double winningPercentage){
+		this.winningPercentage = winningPercentage;
+	}
+	
+	public void gambleAnotherRound(double dollarsBet){
+		if(winner.nextDouble() < winningPercentage){
+			dollarsSpent += dollarsBet;
+			dollarsWon += dollarsBet * 1.5;
+			System.out.println(gamblerName + "Won");
+		}else{
+			dollarsSpent += dollarsBet;
+			dollarsWon -= dollarsBet;
+			System.out.println(gamblerName + "Lost");
+		}
+		
+	}
+	
+	public String getGamblerName(){
+		return gamblerName;
+	}
+	
+	public double getDollarsSpent(){
+		return dollarsSpent;	
+	}
+	
+	public double getDollarsWon(){
+		return dollarsWon;
+	}
+	
+	public double getNetProfit(){
+		return dollarsWon - dollarsSpent;
+	}
+	
+	public Gambler(String name){
+		gamblerName = name;
+	}
+}

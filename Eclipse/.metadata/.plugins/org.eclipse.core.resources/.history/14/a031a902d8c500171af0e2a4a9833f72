@@ -1,0 +1,72 @@
+
+
+import java.util.Scanner;
+
+public class Casino {
+
+	public static void main(String[] arga){
+		
+		Scanner kb = new Scanner(System.in);
+		
+		Gambler gambler1 = new Gambler("Grumpy");
+		Gambler gambler2 = new Gambler("Sleepy");
+		Gambler gambler3 = new Gambler("Sneezy");
+		Gambler gambler4 = new Gambler("Cheaty");
+		
+		gambler1.setWinningPercentage(.34);
+		gambler2.setWinningPercentage(.21);
+		gambler3.setWinningPercentage(.59);
+		gambler4.setWinningPercentage(.51);
+		
+		System.out.println("the gamblers are: ");
+		System.out.println(gambler1.getGamblerName());
+		System.out.println("Winning percentage: " 
+		+ gambler1.getWinningPecentage());
+		System.out.println(gambler2.getGamblerName());
+		System.out.println("Winning percentage: " 
+				+ gambler2.getWinningPecentage());
+		System.out.println(gambler3.getGamblerName());
+		System.out.println("Winning percentage: " 
+				+ gambler3.getWinningPecentage());
+		System.out.println("and");
+		System.out.println(gambler4.getGamblerName());
+		System.out.println("Winning percentage: " 
+				+ gambler4.getWinningPecentage());
+		
+		while(true){
+			System.out.println("\n" + gambler1.getGamblerName() 
+			+ "\n has spent: $" + gambler1.getDollarsSpent()
+			+ "\n possesses: $" + gambler1.getDollarsWon()
+			+ "\n and has made: $" + gambler1.getNetProfit());
+			
+			System.out.println(gambler2.getGamblerName() 
+			+ "\n has spent: $" + gambler2.getDollarsSpent()
+			+ "\n possesses: $" + gambler2.getDollarsWon()
+			+ "\n and has made: $" + gambler2.getNetProfit());
+			
+			System.out.println(gambler3.getGamblerName() 
+			+ "\n has spent: $" + gambler3.getDollarsSpent()
+			+ "\n possesses: $" + gambler3.getDollarsWon()
+			+ "\n and has made: $" + gambler3.getNetProfit());
+			
+			System.out.println(gambler4.getGamblerName() 
+			+ "\n has spent: $" + gambler4.getDollarsSpent()
+			+ "\n possesses: $" + gambler4.getDollarsWon()
+			+ "\n and has made: $" + gambler4.getNetProfit());
+			
+			System.out.println("how much should each gambler bet?");
+			double dollarsBet = kb.nextDouble();
+			
+			if( dollarsBet == 0){
+				break;
+			}
+			
+			gambler1.gambleAnotherRound(dollarsBet);
+			gambler2.gambleAnotherRound(dollarsBet);
+			gambler3.gambleAnotherRound(dollarsBet);
+			gambler4.gambleAnotherRound(dollarsBet);
+		}
+		
+		System.out.println("Thanks for playing!");
+	}
+}

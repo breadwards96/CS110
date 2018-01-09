@@ -1,0 +1,41 @@
+
+public class Gambler {
+
+	private String gamblerName;
+	private double winningPercentage;
+	private double dollarsSpent;
+	private double dollarsWon;
+	
+	public double getWinningPecentage(){
+		return winningPercentage;
+	}
+	
+	public void setWinningPercentage(double winningPercentage){
+		
+	}
+	
+	public void gambleAnotherRound(double dollarsBet){
+		
+	}
+	
+	public String getGamblerName(){
+		return gamblerName;
+	}
+	
+	public double getDollarsSpent(){
+		return dollarsSpent;
+		
+	}
+	
+	public double getDollarsWon(){
+		return dollarsWon;
+	}
+	
+	public double getNetProfit(){
+		return dollarsWon - dollarsSpent;
+	}
+	
+	public Gambler(String name){
+		
+	}
+}
